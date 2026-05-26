@@ -1,6 +1,7 @@
 {
   "subjectArea" : {
     "name" : "Sample Sales",
+    "description": "dummy subject area",
     "sourceBusinessModel" : "businessModel:Sample Sales",
     "tableOrder" : [ {
       "name" : "presentationTable:Sample Sales.Product"
