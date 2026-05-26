@@ -7,6 +7,9 @@
     }, {
       "name" : "Units",
       "sourceLogicalColumn" : "logicalColumn:Sample Sales.Fact Sales.Units"
+    }, {
+      "name" : "Average Price",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Fact Sales.Average Price"
     } ]
   }
 }
