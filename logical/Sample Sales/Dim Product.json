@@ -1,0 +1,137 @@
+{
+  "logicalTable" : {
+    "name" : "Dim Product",
+    "type" : "DIMENSION",
+    "primaryKey" : [ "Prod Key" ],
+    "logicalColumns" : [ {
+      "name" : "Prod Key",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Dim Product.PROD_KEY" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product"
+    }, {
+      "name" : "Prod Dsc",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Dim Product.PROD_DSC" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Product"
+    }, {
+      "name" : "Type",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Dim Product.TYPE" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Type"
+    }, {
+      "name" : "Lob",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Dim Product.LOB" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "LOB"
+    }, {
+      "name" : "Brand",
+      "dataType" : "VARCHAR",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Dim Product",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Dim Product.BRAND" ]
+          }
+        } ]
+      },
+      "logicalLevel" : "Brand"
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Dim Product",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:FVADW.BISAMPLE.Dim Product" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "hierarchyType" : "LEVEL_BASED",
+    "levelBasedHierarchy" : {
+      "defaultRootLevel" : "Total",
+      "ragged" : false,
+      "skipped" : false,
+      "logicalLevels" : [ {
+        "name" : "Total",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : true,
+        "disableAggregateToHigherLevel" : false
+      }, {
+        "name" : "Product",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Prod Key" ],
+        "displayKey" : "Prod Dsc"
+      }, {
+        "name" : "Brand",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Brand" ],
+        "displayKey" : "Brand"
+      }, {
+        "name" : "LOB",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Lob" ],
+        "displayKey" : "Lob"
+      }, {
+        "name" : "Type",
+        "numberOfElements" : 1,
+        "grandTotalLevel" : false,
+        "disableAggregateToHigherLevel" : false,
+        "primaryKey" : [ "Type" ],
+        "displayKey" : "Type"
+      } ],
+      "logicalHierarchies" : [ {
+        "name" : "H Product",
+        "levels" : [ "Total", "Brand", "LOB", "Type", "Product" ]
+      } ]
+    }
+  }
+}

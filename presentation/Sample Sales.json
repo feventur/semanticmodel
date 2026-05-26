@@ -1,0 +1,11 @@
+{
+  "subjectArea" : {
+    "name" : "Sample Sales",
+    "sourceBusinessModel" : "businessModel:Sample Sales",
+    "tableOrder" : [ {
+      "name" : "presentationTable:Sample Sales.Product"
+    }, {
+      "name" : "presentationTable:Sample Sales.Measures"
+    } ]
+  }
+}

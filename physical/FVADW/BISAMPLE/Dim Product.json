@@ -1,0 +1,7 @@
+{
+  "physicalTable" : {
+    "name" : "Dim Product",
+    "sourceTable" : "physicalTable:FVADW.BISAMPLE.SAMP_PRODUCTS_D",
+    "overrideSourceCacheSetting" : false
+  }
+}

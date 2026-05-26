@@ -1,0 +1,17 @@
+{
+  "physicalTable" : {
+    "name" : "Fact Sales",
+    "sourceTable" : "physicalTable:FVADW.BISAMPLE.SAMP_REVENUE_F",
+    "overrideSourceCacheSetting" : false,
+    "joins" : [ {
+      "rightTable" : "physicalTable:FVADW.BISAMPLE.Dim Product",
+      "useJoinExpression" : false,
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:FVADW.BISAMPLE.Fact Sales.PROD_KEY",
+        "rightColumn" : "physicalColumn:FVADW.BISAMPLE.Dim Product.PROD_KEY"
+      } ],
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE"
+    } ]
+  }
+}

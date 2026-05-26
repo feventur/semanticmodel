@@ -1,0 +1,57 @@
+{
+  "logicalTable" : {
+    "name" : "Fact Sales",
+    "type" : "FACT",
+    "logicalColumns" : [ {
+      "name" : "Units",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Fact Sales",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Fact Sales.UNITS" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    }, {
+      "name" : "Revenue",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "PHYSICAL_COLUMNS",
+        "physicalMappings" : [ {
+          "logicalTableSource" : "Fact Sales",
+          "physicalExpression" : {
+            "expressionTemplate" : "%1",
+            "expressionObjects" : [ "physicalColumn:FVADW.BISAMPLE.Fact Sales.REVENUE" ]
+          }
+        } ]
+      },
+      "aggregation" : {
+        "rule" : "SUM"
+      }
+    } ],
+    "logicalTableSources" : [ {
+      "name" : "Fact Sales",
+      "disable" : false,
+      "tableMapping" : {
+        "tables" : [ "physicalTable:FVADW.BISAMPLE.Fact Sales" ]
+      },
+      "combineWithOtherFragments" : false,
+      "enableFragmentSelection" : false,
+      "distinctValues" : false
+    } ],
+    "joins" : [ {
+      "rightTable" : "logicalTable:Sample Sales.Dim Product",
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "drivingTable" : "None"
+    } ]
+  }
+}

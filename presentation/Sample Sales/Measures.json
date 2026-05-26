@@ -1,0 +1,12 @@
+{
+  "presentationTable" : {
+    "name" : "Measures",
+    "presentationColumns" : [ {
+      "name" : "Revenue",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Fact Sales.Revenue"
+    }, {
+      "name" : "Units",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Fact Sales.Units"
+    } ]
+  }
+}

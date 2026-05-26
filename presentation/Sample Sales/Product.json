@@ -1,0 +1,51 @@
+{
+  "presentationTable" : {
+    "name" : "Product",
+    "presentationColumns" : [ {
+      "name" : "Brand",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Dim Product.Brand"
+    }, {
+      "name" : "Lob",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Dim Product.Lob"
+    }, {
+      "name" : "Prod Dsc",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Dim Product.Prod Dsc"
+    }, {
+      "name" : "Prod Key",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Dim Product.Prod Key"
+    }, {
+      "name" : "Type",
+      "sourceLogicalColumn" : "logicalColumn:Sample Sales.Dim Product.Type"
+    } ],
+    "hierarchies" : [ {
+      "name" : "H Product",
+      "sourceLogicalTable" : "logicalTable:Sample Sales.Dim Product",
+      "localization" : { },
+      "levels" : [ {
+        "name" : "Total",
+        "sourceLogicalLevel" : "logicalLevel:Sample Sales.Dim Product.Total",
+        "localization" : { }
+      }, {
+        "name" : "Brand",
+        "sourceLogicalLevel" : "logicalLevel:Sample Sales.Dim Product.Brand",
+        "displayColumn" : "presentationColumn:Sample Sales.Product.Brand",
+        "localization" : { }
+      }, {
+        "name" : "LOB",
+        "sourceLogicalLevel" : "logicalLevel:Sample Sales.Dim Product.LOB",
+        "displayColumn" : "presentationColumn:Sample Sales.Product.Lob",
+        "localization" : { }
+      }, {
+        "name" : "Type",
+        "sourceLogicalLevel" : "logicalLevel:Sample Sales.Dim Product.Type",
+        "displayColumn" : "presentationColumn:Sample Sales.Product.Type",
+        "localization" : { }
+      }, {
+        "name" : "Product",
+        "sourceLogicalLevel" : "logicalLevel:Sample Sales.Dim Product.Product",
+        "displayColumn" : "presentationColumn:Sample Sales.Product.Prod Dsc",
+        "localization" : { }
+      } ]
+    } ]
+  }
+}
