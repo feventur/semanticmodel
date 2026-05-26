@@ -36,6 +36,17 @@
       "aggregation" : {
         "rule" : "SUM"
       }
+    }, {
+      "name" : "Average Price",
+      "dataType" : "NUMERIC",
+      "writeable" : false,
+      "logicalColumnSource" : {
+        "derivedFrom" : "LOGICAL_COLUMNS",
+        "logicalExpression" : {
+          "expressionTemplate" : "%1/%2",
+          "expressionObjects" : [ "logicalColumn:Sample Sales.Fact Sales.Revenue", "logicalColumn:Sample Sales.Fact Sales.Units" ]
+        }
+      }
     } ],
     "logicalTableSources" : [ {
       "name" : "Fact Sales",
